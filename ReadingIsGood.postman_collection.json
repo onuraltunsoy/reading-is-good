@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "c3699fb0-b3ca-49c6-b581-cff45a98cb2d",
+		"name": "ReadingIsGood",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "addBook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"beyaz gemi\",\n    \"author\": \"cengiz aymatov\",\n    \"isbnNo\": \"1234\",\n    \"price\": 10.0,\n    \"stock\": 100\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/book/",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"book",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBooks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2MTRiYjdlZWZkM2FlMjFmZDMxNmZhOWQiLCJpYXQiOjE2MzIzNTIyNDMsImV4cCI6MTYzMjM1Mjg0M30.5-irqbyp_lLpMYQXvpkeKXmidURh6b2M7Uzq-Zam9qTiPORjJymBqtv0G5hvDqAJIv2qzF40v6ThlC0kCXF2ow",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/book/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCustomerOrderWithPagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/customer/getCustomerOrder?customerId=614b77c78f608e65bb4670d3&pageSize=10&page=0",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"getCustomerOrder"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "614b77c78f608e65bb4670d3"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateStock",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\":\"614b7b3bd23e9333f74a6f95\",\n        \"count\":3000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/book/updateStock",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"updateStock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOrdersByDateInterval",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2MTRiYzdmZmYwZDk3MDM0NWFhNzhiMDIiLCJpYXQiOjE2MzIzNTYzNjAsImV4cCI6MTYzMjM1Njk2MH0.68HM1AEzutl_9yhH4Vc0-LQNYEMqwYehb5rSgvFaPDoj2UyzYMltqtk9eE5vkxZjk3TQ1yO551FV0Ns1XdCepA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/order/getOrdersByDateInterval?startDate=2021-09-21&endDate=2021-09-24",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order",
+						"getOrdersByDateInterval"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2021-09-21"
+						},
+						{
+							"key": "endDate",
+							"value": "2021-09-24"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"name\":\"user\",\n    \"username\":\"user\",\n    \"password\":\"password\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/customer/signUp",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"signUp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n    \"username\":\"user\",\n    \"password\":\"password\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/customer/signIn",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"signIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2MTRiYzlkMTAzOTdlYTExZTk3Mjk3MjciLCJpYXQiOjE2MzIzNTY4MzYsImV4cCI6MTYzMjM1NzQzNn0.Ss_qBtLYiobL26QIBMp6VRyhuawiOHIFADexvg3fNNkCuUqQW965Q3lNB3cMXpI11Kc9OYwtktumgnBNGQH0tQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"orderName\":\"123333\",\n    \"books\":[\n        {\n            \"bookId\":\"614b7b3bd23e9333f74a6f95\",\n            \"quantity\":2\n        }\n    ],\n    \"customerId\":\"614bc9d10397ea11e9729727\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/order",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMonthlyStatistics",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2MTRiYzFjZmNiY2Y3YjQ3ZGNkNjI5NTQiLCJpYXQiOjE2MzIzNTQ3NzIsImV4cCI6MTYzMjM1NTM3Mn0.P38UezjcTeFS1MMGcP0xDKh14iucLsMhfuBXwRTmOWb_grZOet3u9R8RHD314TVdgqKhH7LvpaVZLYPywxx27Q",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/statistics/getMonthlyStatistics",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"statistics",
+						"getMonthlyStatistics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getORderById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2MTRiYzlkMTAzOTdlYTExZTk3Mjk3MjciLCJpYXQiOjE2MzIzNTY4MzYsImV4cCI6MTYzMjM1NzQzNn0.Ss_qBtLYiobL26QIBMp6VRyhuawiOHIFADexvg3fNNkCuUqQW965Q3lNB3cMXpI11Kc9OYwtktumgnBNGQH0tQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/order/614bc9f90397ea11e9729728",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order",
+						"614bc9f90397ea11e9729728"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
